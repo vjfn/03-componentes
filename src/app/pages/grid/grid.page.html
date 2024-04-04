@@ -1,0 +1,44 @@
+<app-header titulo="grid"></app-header>
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">grid</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">1 de 6</ion-col>
+      <ion-col size="6">2 de 6</ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid fixed>
+    <ion-row>
+
+<!--       se pueden utilizar decimales en la division de las columnas,
+      el fixed añade padding y redimensiona automaticamente sin estirar a foto -->
+
+      <ion-col size="12" size-lg="3" size-md="4" size-sm="6"
+      *ngFor="let item of [1,1,1,1,1,1,1,1,1,1,1,1]">
+        <ion-card>
+          <ion-img src="/assets/stan-lee.jpg"></ion-img>
+        </ion-card>
+
+        <ion-card-header>
+          <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+          <ion-card-title>Awesome Title</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum eos ipsum error sapiente doloremque ullam amet, est commodi beatae! Qui odit officia et perspiciatis dolores laudantium? Voluptates animi exercitationem ea.
+        </ion-card-content>
+
+      </ion-col>
+
+
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>

@@ -1,0 +1,56 @@
+<app-header titulo="date time"></app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">dateTime</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-list>
+
+    <ion-list-header>
+      <ion-label>Datos de Nacimiento</ion-label>
+    </ion-list-header>
+  
+
+    <ion-item>
+      <ion-label>Fecha de Nacimiento</ion-label>
+      <ion-datetime [value]="fechaNaci.toISOString()"
+                    display-format="DD MMMM YYYY"
+                    (ionChangue)="cambioFecha($event)"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Fecha de Nacimiento</ion-label>
+      <ion-datetime-button datetime="datetime"></ion-datetime-button>
+
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime id="datetime"(ionChangue)="cambioFecha($event)"
+            ></ion-datetime>
+          </ng-template>
+        </ion-modal>
+
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Min y Max date</ion-label>
+      <ion-datetime-button datetime="datetime2"></ion-datetime-button>
+
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime id="datetime2"(ionChangue)="cambioFecha($event)"
+            min="1900-01-01"
+            max={{fechaNaci.valueOf}}
+            ></ion-datetime>
+          </ng-template>
+        </ion-modal>
+
+    </ion-item>
+
+    
+  </ion-list>
+
+</ion-content>
