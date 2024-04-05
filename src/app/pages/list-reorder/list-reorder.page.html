@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" color="primary"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title color="primary">List - Reorder</ion-title>
+    <!-- Este boton activa o desactiva el el ion reorder group -->
+    <ion-buttons slot="end">
+      <ion-button color="primary" (click)="reorderDisabled = !reorderDisabled">
+        Toggle
+      </ion-button>
+    </ion-buttons>
+
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">list-reorder</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+<!--     Permite la creacion del grupo para reordenar,
+   pero no aplica la funcionalidad -->
+    <ion-reorder-group [disabled]="reorderDisabled"
+                        (ionItemReorder)="doReorder($event)">
+
+      <ion-item *ngFor="let personaje of personajes">
+        <ion-label>{{personaje}}</ion-label>
+          <!-- Habilita la funcionalidad para reordenar el item -->
+        <ion-reorder slot="end">
+
+          <!-- Icono personalizado, se añade aqui ya que es shadow css -->
+          <ion-icon color="primary" name="git-compare"></ion-icon>
+        </ion-reorder>
+      </ion-item>
+
+    </ion-reorder-group>
+  </ion-list>
+
+</ion-content>
