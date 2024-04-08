@@ -1,0 +1,84 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/inicio" color="primary"></ion-back-button>
+    </ion-buttons>
+
+
+    <ion-title color="primary">Popover</ion-title>
+
+
+    <ion-buttons slot="end">
+      <ion-button (click)="presentPopover($event)">
+        <ion-icon color="primary" slot="icon-only" name="person-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">popover</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+<!--   Modo antiguo de hacer el popover -->
+  <ion-button (click)="presentPopover($event)" expand="block">
+    Mostrar Popover
+  </ion-button>
+
+
+
+<!--   Modelo moderno utilizando ion-popover -->
+
+  <div class="container">
+
+    <ion-button id="top-center">Mostrar Popover Centrado</ion-button>
+    <ion-popover trigger="top-center">
+      <ng-template>
+        <ion-content><app-popover-info></app-popover-info></ion-content>
+      </ng-template>
+    </ion-popover>
+
+    <ion-button id="bottom-start">Side=Bottom, Alignment=Start</ion-button>
+    <ion-popover trigger="bottom-start" side="bottom" alignment="start">
+      <ng-template>
+        <ion-content class="ion-padding"><app-popover-info></app-popover-info></ion-content>
+      </ng-template>
+    </ion-popover>
+  
+    <ion-button id="left-start">Side=Left, Alignment=Start</ion-button>
+    <ion-popover trigger="left-start" side="left" alignment="start">
+      <ng-template>
+        <ion-content class="ion-padding"><app-popover-info></app-popover-info></ion-content>
+      </ng-template>
+    </ion-popover>
+  
+    <ion-button id="right-end">Side=Right, Alignment=End</ion-button>
+    <ion-popover trigger="right-end" side="right" alignment="end">
+      <ng-template>
+        <ion-content class="ion-padding"><app-popover-info></app-popover-info></ion-content>
+      </ng-template>
+    </ion-popover>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-button (click)="presentPopover($event)">
+        <ion-icon color="primary" slot="icon-only" name="person-outline">
+        </ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+
+    <ion-title color="primary">Footer</ion-title>
+  </ion-toolbar>
+</ion-footer>
