@@ -1,0 +1,11 @@
+<app-header titulo="Toast"></app-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  
+  <ion-content class="ion-padding">
+    <ion-button id="open-toast" expand="block">Mostrar Toast</ion-button>
+    <p id="message">Al pulsar el boton se abrirá automáticamente un toast que permanecerá abierto 5 segundos</p>
+    <ion-toast trigger="open-toast" message="El Toast se cerrará en 5 segundos" [duration]="5000"></ion-toast>
+  </ion-content>
+
+</ion-content>

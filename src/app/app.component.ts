@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { DataService } from './services/data.service';
 import { Componente } from './interfaces/interfaces';
+import { register } from 'swiper/element/bundle';
+
+register();
 
 @Component({
   selector: 'app-root',

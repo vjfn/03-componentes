@@ -3,6 +3,7 @@ import { SearchbarChangeEventDetail } from '@ionic/angular';
 import { IonSearchbarCustomEvent } from '@ionic/core';
 import { DataService } from 'src/app/services/data.service';
 
+
 @Component({
   selector: 'app-search',
   templateUrl: './search.page.html',
@@ -10,7 +11,8 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class SearchPage implements OnInit {
 
-  albumes: any[]=[];
+  albumes: any[] = [];
+  textoBuscar: string = "";
 
 
   constructor(private dataService:DataService) { }
@@ -23,9 +25,7 @@ export class SearchPage implements OnInit {
     });
   }
 
-  onSearchChange($event: IonSearchbarCustomEvent<SearchbarChangeEventDetail>) {
-    throw new Error('Method not implemented.');
-    }
-
-
+  onSearchChange(event:any) {
+    this.textoBuscar = event.detail.value;
+  }
 }

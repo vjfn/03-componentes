@@ -1,0 +1,41 @@
+<app-header titulo="swiper-slide"></app-header>
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Mover con Botones</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="goPrev()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+      <ion-button (click)="goNext()">
+        <ion-icon slot="icon-only" name="arrow-forward"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <swiper-container
+  #swiper
+  (afterinit)="swiperReady()"
+  (slidechange)="swiperSlideChanged($event)" 
+  [loop]="true"
+  [pagination]="true">
+    <swiper-slide class="slide-1">Slide Me! 1</swiper-slide>
+    <swiper-slide class="slide-2">Slide Me! 2</swiper-slide>
+    <swiper-slide class="slide-3">Slide Me! 3</swiper-slide>
+  </swiper-container>
+
+  <swiper-container 
+
+  [loop]="true"
+  [pagination]="true"
+  [zoom]="true">
+    <swiper-slide class="slide-1">Slide 1</swiper-slide>
+    <swiper-slide class="slide-2">Slide 2</swiper-slide>
+    <swiper-slide class="slide-3">Slide 3</swiper-slide>
+  </swiper-container>
+
+
+
+</ion-content>
